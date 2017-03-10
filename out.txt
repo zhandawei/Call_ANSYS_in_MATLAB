@@ -1,0 +1,216 @@
+
+ ANSYS Multiphysics                                
+
+
+ *-------------------------------------------------------------*
+ |                                                             |
+ |   W E L C O M E   T O   T H E   A N S Y S   P R O G R A M   |
+ |                                                             |
+ *-------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *                  ANSYS 12.1 LEGAL NOTICES                   *
+ ***************************************************************
+ *                                                             *
+ * COPYRIGHT AND TRADEMARK INFORMATION                         *
+ *                                                             *
+ * Copyright 2009 SAS IP, Inc.  All rights reserved.           *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD for the complete Legal Notice.             *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * DISCLAIMER NOTICE                                           *
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * EMBODY TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY       *
+ * INFORMATION OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS. *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. and ANSYS Europe, Ltd. are UL registered        *
+ * ISO 9001:2000 Companies.                                    *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * U.S. GOVERNMENT RIGHTS                                      *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+
+
+          *****  ANSYS COMMAND LINE ARGUMENTS  *****
+  BATCH MODE REQUESTED (-b)    = LIST
+  INPUT FILE COPY MODE (-c)    = COPY
+
+ 00980340          VERSION=WINDOWS x64     RELEASE= 12.1     UP20091102
+ CURRENT JOBNAME=file  12:56:19  MAR 10, 2017 CP=      0.203
+
+     1  /prep7  
+     2      
+     3  !---read the input parameters in para_in.txt----------  
+     4  *DIM,para,ARRAY,6,1 
+     5  *CREATE,ansuitmp
+     6  *VREAD,para,para_in,txt,
+     7  (10F9.0)
+     8  *END
+     9  /INPUT,ansuitmp 
+    10      
+    11  x1=para(1)  
+    12  x2=para(2)  
+    13  x3=para(3)  
+    14  x4=para(4)  
+    15  x5=para(5)  
+    16  x6=para(6)  
+    17  !-------------------------------------------------------
+    18      
+    19      
+    20  !---this should be replace by your APDL code--------------  
+    21  *DIM,result,ARRAY,3,1   
+    22  result(1)=x1+x2+x3+x4+x5+x6 
+    23  result(2)=x1+x2+x3*x4+x5+x6 
+    24  result(3)=x1*x2+x3*x4+x5*x6 
+    25  !-------------------------------------------------------
+    26      
+    27      
+    28  !-------output the result to para_out.txt---------------
+    29  *CFOPEN,para_out,txt
+    30  *creat,ee   
+    31  *VWRITE,result(1)   
+    32  (F20.3,' ') 
+    33  *end
+    34  /input,ee   
+    35  *CFCLOS 
+    36  !-------------------------------------------------------
+    37      
+    38      
+    39      
+
+ RUN SETUP PROCEDURE FROM FILE= C:\Program Files\ANSYS Inc\v121\ANSYS\apdl\start121.ans
+
+ /INPUT FILE= C:\Program Files\ANSYS Inc\v121\ANSYS\apdl\start121.ans  LINE=       0
+1
+
+ ***** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 12.1     *****
+ ANSYS Multiphysics                                
+ 00980340          VERSION=WINDOWS x64   12:56:19  MAR 10, 2017 CP=      0.203
+
+                                                                               
+
+
+          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+
+ SET PARAMETER DIMENSIONS ON  PARA TYPE=ARRA  DIMENSIONS=     6     1     1
+
+ START CREATE BY COPY FROM INPUT TO  ansuitmp
+
+ END FILE CREATE
+
+ /INPUT FILE= ansuitmp  LINE=       0
+
+ VECTOR READ OPERATION  *VREAD  
+  para     READ FROM FILE para_in.txt
+ VECTOR LENGTH=      6
+ FORMAT=(10F9.0)                                                              
+
+ PARAMETER X1 =     100.0000000    
+
+ PARAMETER X2 =     200.0000000    
+
+ PARAMETER X3 =     300.0000000    
+
+ PARAMETER X4 =     400.0000000    
+
+ PARAMETER X5 =     500.0000000    
+
+ PARAMETER X6 =     600.0000000    
+
+ SET PARAMETER DIMENSIONS ON  RESULT TYPE=ARRA  DIMENSIONS=     3     1     1
+
+ PARAMETER RESULT(1) =     2100.000000    
+
+ PARAMETER RESULT(2) =     121400.0000    
+
+ PARAMETER RESULT(3) =     440000.0000    
+
+ OPENED FILE= para_out.txt FOR COMMAND FILE DATA 
+
+
+ START CREATE BY COPY FROM INPUT TO  ee
+
+ END FILE CREATE
+
+ /INPUT FILE= ee  LINE=       0
+
+  COMMAND FILE CLOSED 
+
+
+ ***** END OF INPUT ENCOUNTERED *****
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          0
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
+
+
+ ***** PROBLEM TERMINATED BY INDICATED ERROR(S) OR BY END OF INPUT DATA *****
+
++--------------------- A N S Y S   S T A T I S T I C S ------------------------+
+
+Release: 12.1       UP20091102   Version: WINDOWS x64 
+Date Run: 03/10/2017   Time: 12:56
+Windows Process ID:         4892
+
+Number of cores:   2 (Shared Memory Parallel)
+
+Job Name: file
+Working Directory: E:\zhandawei\Call_ANSYS_using_MATLAB
+
+Elapsed time spent pre-processing model (/PREP7)  :      0.0 seconds
+Elapsed time spent solution - preprocessing       :      0.0 seconds
+Elapsed time spent computing solution             :      0.0 seconds
+Elapsed time spent solution - postprocessing      :      0.0 seconds
+Elapsed time spent post-processing model (/POST1) :      0.0 seconds
+
++------------------ E N D   A N S Y S   S T A T I S T I C S -------------------+
+
+
+ *---------------------------------------------------------------------------*
+ |                                                                           |
+ |                            ANSYS RUN COMPLETED                            |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |            Release 12.1           UP20091102         WINDOWS x64          |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |   Maximum Scratch Memory Used       =      177124 Words        0.676 MB   |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |        CP Time      (sec) =          0.218       Time  =  12:56:19        |
+ |        Elapsed Time (sec) =          2.000       Date  =  03/10/2017      |
+ |                                                                           |
+ *---------------------------------------------------------------------------*
