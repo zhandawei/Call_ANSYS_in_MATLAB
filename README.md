@@ -1,8 +1,7 @@
-# Call_ANSYS_in_MATLAB
-The is the MATLAB code for calling ANSYS in MATLAB
+# Call ANSYS in MATLAB
+This code try to use MATLAB to call the ANSYS software to do FEM anlysis, which can save you a lot of times when you want to do multiple designs computation using ANSYS, especially for tasks like approximation and optimization. 
 
-This code try to use MATLAB to call the ANSYS software to do FEM anlysis, which can save you a lot of times when you want to do multiple designs 
-computation using ANSYS, especially for tasks like approximation and optimization. It works as following:
+It works as following:
 
 1. MATLAB write the design parameters X into input file (e.g. para_in.txt);
 2. MATLAB call ANSYS software to excute the APDL file (e.g. apdl.txt). 
