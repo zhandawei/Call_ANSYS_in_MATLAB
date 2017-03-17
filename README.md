@@ -1,5 +1,5 @@
 # Call ANSYS in MATLAB
-This code try to use MATLAB to call the ANSYS software to do FEM anlysis, which can save you a lot of times when you want to do multiple designs computation using ANSYS, especially for tasks like approximation and optimization. 
+This code try to use MATLAB to call the ANSYS software to do FEM anlysis, which can save you a lot of times when you want to do multiple design computations using ANSYS, especially for tasks like approximation and optimization. 
 
 It works as following:
 
