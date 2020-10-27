@@ -3,8 +3,8 @@ This code try to use MATLAB to call the ANSYS software to do FEM anlysis, which 
 
 It works as following:
 
-1. MATLAB write the design parameters X into input file (e.g. para_in.txt);
-2. MATLAB call ANSYS software to excute the APDL file (e.g. apdl.txt). 
+1. MATLAB writes the design parameters X into input file (e.g. para_in.txt);
+2. MATLAB calls ANSYS software to execute the APDL file (e.g. apdl.txt). 
 3. The APDL file reads the parameters from the input file and writes the analysis result to the output file (e.g. para_out.txt).
 4. MATLAB reads the  results from the output file.
 
